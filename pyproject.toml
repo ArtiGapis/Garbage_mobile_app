@@ -12,7 +12,11 @@ author_email = "arturas.danilevicius@gmail.com"
 formal_name = "Trash date"
 description = "Garbage container transportation schedule. Kaunas city"
 long_description = """More details about the app should go here.
+
+
 """
+icon = "src/Trash/resources/icon/icon.ico"
+
 sources = [
     "src/Trash",
 ]
