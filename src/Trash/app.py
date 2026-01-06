@@ -24,44 +24,53 @@ class CalendarApp(toga.App):
         self.main_window.show()
 
     # -------------------------
+    # CHECK INPUT
+    # -------------------------
+    def check_code(self, widget):
+        if 'KAUNAS' == self.SECRET_CODE:
+            self.show_calendar()
+        else:
+            self.main_window.error_dialog(
+                "Klaida",
+                "Neteisingas adresas"
+            )
+
+    # -------------------------
     # LOGIN SCREEN
     # -------------------------
     def show_login(self):
         box = toga.Box(style=Pack(direction=COLUMN, padding=20, alignment=CENTER))
 
         label = toga.Label(
-            "Įveskite kodą:",
+            "Naujas adresas:",
             style=Pack(padding_bottom=10, font_size=14)
         )
 
         self.input_field = toga.TextInput(
-            placeholder="Slapta frazė",
+            placeholder="Įveskite adresą",
             style=Pack(width=200, padding_bottom=10)
         )
 
-        button = toga.Button(
-            "Tęsti",
+        new_button = toga.Button(
+            "Patvirtinti",
             on_press=self.check_code,
             style=Pack(padding_top=10)
         )
+        for address in app_base.reader('street_db.json')['address']:
+            address_button = toga.Button(
+                address,
+                on_press=self.check_code,
+                style=Pack(padding_top=10)
+            )
+            box.add(address_button)
+
 
         box.add(label)
         box.add(self.input_field)
-        box.add(button)
-
+        box.add(new_button)
         self.main_window.content = box
 
-    # -------------------------
-    # CHECK INPUT
-    # -------------------------
-    def check_code(self, widget):
-        if self.input_field.value.strip() == self.SECRET_CODE:
-            self.show_calendar()
-        else:
-            self.main_window.error_dialog(
-                "Klaida",
-                "Neteisingas kodas"
-            )
+
 
     # -------------------------
     # CALENDAR SCREEN

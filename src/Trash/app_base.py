@@ -4,19 +4,28 @@ import os
 
 BASE_DIR = os.path.dirname(__file__)
 DATA_DIR = os.path.join(BASE_DIR, "data")
+SECRET_CODE = "KAUNAS"  # 👈 pakeisk jei reikia
 
-
+# -------------------------
+# READ JSON FILE
+# -------------------------
 def reader(filename):
     file_path = os.path.join(DATA_DIR, filename)
     with open(file_path, 'r') as json_file:
         return json.load(json_file)
 
+x= reader('street_db.json')
+print(x['address'])
 
 def get_garbage(trash):
-    data = reader('trash_db.json')
+    data = reader('V. Tuinylos g.23A.json')
     return data[trash]
 
 
+
+# -------------------------
+# LOAD JSON INFO TO DICT
+# -------------------------
 def load_events():
     events = {}
 

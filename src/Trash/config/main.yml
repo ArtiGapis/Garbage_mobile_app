@@ -1,0 +1,42 @@
+city:
+  xpath: '/html/body/div/div/div[2]/form/div/div[1]/div/div/div/div[1]/div[2]/div/input'
+  name: 'Kauno m. sav.'
+
+street:
+  xpath: '/html/body/div/div/div[2]/form/div/div[3]/div/div/div/div[1]/div[2]/div/input'
+  name: 'V. Tuinylos g.'
+
+house:
+  xpath: '/html/body/div/div/div[2]/form/div/div[4]/div/input'
+  name: '23A'
+
+buttons:
+  paper_xpath: '/html/body/div/div/div[2]/table/tbody/tr[1]/td[4]/button'
+  glass_xpath: '/html/body/div/div/div[2]/table/tbody/tr[7]/td[4]/button'
+  mixed_xpath: '/html/body/div/div/div[2]/table/tbody/tr[3]/td[4]/button'
+  paper_fw_xpath: '/html/body/div/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[2]/div[1]/div[2]/i'
+  glass_fw_xpath: '/html/body/div/div/div[2]/table/tbody/tr[8]/td/div/div/div/div[2]/div[1]/div[2]/i'
+  mixed_fw_xpath: '/html/body/div/div/div[2]/table/tbody/tr[4]/td/div/div/div/div[2]/div[1]/div[2]/i'
+
+
+garbages:
+  paper:
+    name_xpath: '/html/body/div/div/div[2]/table/tbody/tr[1]/td[1]/span'
+    calendar_xpath: '/html/body/div/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[2]/div[2]/div/div[2]/div/table/tbody'
+    class_xpath: 'pages__AgendaDay-sc-19ihi1-1 brhRFN'
+  glass:
+    name_xpath: '/html/body/div/div/div[2]/table/tbody/tr[7]/td[1]/span'
+    calendar_xpath: '/html/body/div/div/div[2]/table/tbody/tr[8]/td/div/div/div/div[2]/div[2]/div/div[2]/div/table/tbody'
+    class_xpath: 'pages__AgendaDay-sc-19ihi1-1 brhRFN'
+  mixed:
+    name_xpath: '/html/body/div/div/div[2]/table/tbody/tr[3]/td[1]/span'
+    calendar_xpath: '/html/body/div/div/div[2]/table/tbody/tr[4]/td/div/div/div/div[2]/div[2]/div/div[2]/div/table/tbody'
+    class_xpath: 'pages__AgendaDay-sc-19ihi1-1 brhRFN'
+
+api:
+  token: 'data/token.json'
+  credentials: 'data/credentials.json'
+  folder_id: '1IWTAdR8p5GYtimyCWWw8R7W6mAhC3J2Z'
+  file_path: 'data/V. Tuinylos g.23A.json'
+  writer_scope: ['https://www.googleapis.com/auth/drive.file']
+  reader_scope: ['https://www.googleapis.com/auth/drive.readonly']
